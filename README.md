@@ -57,7 +57,7 @@ StudentManagement/
 │   ├── templates/               # HTML Templates
 │   └── student_api_description.yaml  # OpenAPI Spec
 ├── src/test/java/com/StudentManagement/Student/
-│   ├── StudentApplicationTests/  # Integration Tests
+│   ├── StudentApplicationTests/  
 │   ├── StudentControllerTests/   # Controller Tests
 │   └── StudentServiceTests/      # Service Tests
 ├── build.gradle  # Gradle Build File
@@ -170,7 +170,7 @@ The following images provide an overview of the Postman testing conducted for th
    - This image highlights the setup and execution of the FIND_STUDENT_BY_NAME test case, which retrieves a student record by name.
 3. ![INSERT_STUDENT](Assests/inserting_student.png)
    - This image demonstrates the setup and execution of the INSERT_STUDENT test case, which inserts a new student record into the database.
-3. ![DELETE_STUDENT]![img.png](Assests%2Fimg.png)(Assests/inserting_student.png)
+4. ![DELETE_STUDENT]![img.png](Assests%2Fimg.png)(Assests/inserting_student.png)
    - This image demonstrates the setup and execution of the DELETE_STUDENT test case, which deletes a  student record from the database.
 
 
@@ -183,9 +183,6 @@ The following images provide an overview of the Postman testing conducted for th
 ### 2️⃣ Pagination for Fetching Students
    - Implement pagination for the `/api/v1/students` endpoint to fetch student records in smaller chunks, improving efficiency when the dataset grows.
 
-## 📝 License
-This project is **MIT Licensed**. Feel free to modify and use it.
-
 ---
-**Author:** Your Name
+**Author:** Shobhit Kumar
 
