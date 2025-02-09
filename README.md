@@ -24,7 +24,7 @@ Also, make sure that your MySQL database is up and running.
 ## 🛠 Project Setup
 ### 1️⃣ Clone the Repository
 ```sh
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/951-Shobhit-Kumar/Student_Management.git)
 cd StudentManagement
 ```
 
