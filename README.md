@@ -112,14 +112,14 @@ In this project, I've leveraged some classic design patterns to improve code str
 ## application.properties Example 
 spring.application.name=Student
 
-# Database properties (use environment variables for sensitive data)
-spring.datasource.url=jdbc:mysql://localhost:3306/student_db
-spring.datasource.username=${DB_USERNAME}  # Set environment variable for username
-spring.datasource.password=${DB_PASSWORD}  # Set environment variable for password
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+## Database properties (use environment variables for sensitive data)
+ - spring.datasource.url=jdbc:mysql://localhost:3306/student_db
+ - spring.datasource.username=${DB_USERNAME}  # Set environment variable for username
+ - spring.datasource.password=${DB_PASSWORD}  # Set environment variable for password
+ - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 # JPA and Hibernate properties
-spring.jpa.show-sql=true
-spring.jpa.hibernate.ddl-auto=update
+ - spring.jpa.show-sql=true
+ - spring.jpa.hibernate.ddl-auto=update
 
 ## 🧪 Running Tests
 
@@ -148,7 +148,7 @@ Automated tests cover **Controller** and **Service** layers using **JUnit**, **M
 
 ```bash
 gradlew test
-
+```
 # Swagger UI Integration
 
 ### View Swagger UI
