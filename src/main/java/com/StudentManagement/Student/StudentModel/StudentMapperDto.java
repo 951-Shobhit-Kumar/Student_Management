@@ -5,7 +5,6 @@ import java.util.stream.*;
 
 public class StudentMapperDto {
     private StudentMapperDto() {
-        // Private constructor to prevent instantiation
     }
 
     public static Student mapToEntity(StudentDto studentDto) {

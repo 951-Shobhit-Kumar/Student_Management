@@ -39,9 +39,9 @@ class StudentControllerTests {
 //    }
 @BeforeEach
 void setUp() {
-    try (var mock = MockitoAnnotations.openMocks(this)) { // Ensure mock resources are closed
+    try (var mock = MockitoAnnotations.openMocks(this)) {
         mockMvc = MockMvcBuilders.standaloneSetup(studentController)
-                .setControllerAdvice(new StudentApplicationExceptionHandler())  // Register exception handler
+                .setControllerAdvice(new StudentApplicationExceptionHandler())
                 .build();
     } catch (Exception e) {
         e.printStackTrace();
