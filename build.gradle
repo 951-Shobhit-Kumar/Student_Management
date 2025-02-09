@@ -1,0 +1,56 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.2'
+	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.openapi.generator' version '6.2.1' // OpenAPI Generator Plugin
+}
+
+group = 'com.StudentManagement'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'mysql:mysql-connector-java:8.0.33'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0'
+	implementation 'org.yaml:snakeyaml:1.33'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	implementation 'org.springframework.data:spring-data-redis'
+	implementation 'org.springframework:spring-context-support'
+	testImplementation 'org.mockito:mockito-core:3.12.4' // Correct version of Mockito
+	testImplementation 'org.mockito:mockito-junit-jupiter:3.12.4' // Correct version of Mockito
+}
+
+tasks.openApiGenerate {
+	generatorName = "spring"
+	inputSpec = "$projectDir/src/main/resources/OpenApi/student_api_description.yaml"
+	skipValidateSpec = true
+	configOptions = [
+			"openApiNullable": "false",
+			"interfaceOnly": "true"
+	]
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
