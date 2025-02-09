@@ -1,4 +1,6 @@
 package com.StudentManagement.Student.HandlingException.CustomExceptionDefinition;
+// ResourceNotFoundException.java
+// Represents an exception thrown when a requested resource (e.g., a user or item) is not found in the database.
 
 public class ResourceNotFoundException  extends RuntimeException{
 

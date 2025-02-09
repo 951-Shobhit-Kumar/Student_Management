@@ -1,7 +1,7 @@
 package com.StudentManagement.Student.Utility;
 
 import com.StudentManagement.Student.StudentModel.Student;
-
+//this file validate the student based on parameters passed
 public class StudentValidator {
     public static boolean isValid(Student student) {
         return !isInvalidPhoneNumber(student.getPhoneNumber()) &&

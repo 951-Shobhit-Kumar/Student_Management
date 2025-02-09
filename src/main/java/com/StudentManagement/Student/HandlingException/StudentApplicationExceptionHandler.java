@@ -8,7 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
+// StudentApplicationExceptionHandler.java
+// Handles exceptions specific to the student application module, ensuring that relevant error messages are returned for module-related failures.
 @RestControllerAdvice
 public class StudentApplicationExceptionHandler {
 
