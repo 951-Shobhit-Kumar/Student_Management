@@ -97,13 +97,13 @@ In this project, I've leveraged some classic design patterns to improve code str
     - **What it is:** DI is a core principle of Spring. It allows Spring to manage the creation and injection of dependencies (like services and repositories) into your components, instead of having to create them manually.
     - **Why I used it:** This makes the application more flexible and testable. It also decouples components, so each piece of the system focuses only on its own responsibility.
 
-4. **DTO (Data Transfer Object) Pattern** (Optional)
+4. **DTO (Data Transfer Object) Pattern** 
     - **What it is:** The DTO pattern separates the internal data model from the data being sent over the network or between layers.
-    - **Why I used it:** While not explicitly implemented yet, using DTOs can be useful for controlling what data gets exposed to external users and also to decouple your internal model from external communication.
+    - **Why I used it:** Usng DTOs helped in controlling what data gets exposed to external users and also to decouple your internal model from external communication.
 
-5. **Builder Pattern** (Optional)
+5. **Builder Pattern**
     - **What it is:** The Builder pattern is used for constructing complex objects with many attributes in a readable, step-by-step way.
-    - **Why I used it:** If you decide to add more complexity to `Student` creation in the future, the **Lombok `@Builder` annotation** would be a great way to apply this pattern, making object construction much easier and cleaner.
+    - **Why I used it:** If we need to add more complexity to `Student` creation in the future, the **Lombok `@Builder` annotation** would be a great way to apply this pattern, making object construction much easier and cleaner.
 
 6. **Exception Handling Pattern**
     - **What it is:** A pattern that ensures errors are handled consistently and appropriately throughout the application.
