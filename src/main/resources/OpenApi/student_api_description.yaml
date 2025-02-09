@@ -1,0 +1,174 @@
+openapi: 3.0.0
+info:
+  title: Student Management Application
+  description: A Student Management Application for managing student records with the help of CRUD Operations.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api/v1
+    description: Local development server
+
+paths:
+  /students:
+    post:
+      summary: Add a new student record
+      operationId: addStudent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudentDto'
+      responses:
+        '201':
+          description: Student created and added successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudentDto'
+        '400':
+          description: Bad request (Please enter all required fields name, age, class, phoneNumber)
+        '500':
+          description: Internal server error
+
+    get:
+      summary: Display all student records
+      operationId: getAllStudents
+      responses:
+        '200':
+          description: List of all students
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StudentDto'
+        '500':
+          description: Internal server error
+
+  /students/{rollNumber}:
+    get:
+      summary: Display student based on RollNumber
+      operationId: getStudentByRollNumber
+      parameters:
+        - name: rollNumber
+          in: path
+          required: true
+          description: The roll number of the student to retrieve
+          schema:
+            type: integer
+            example: 1001
+      responses:
+        '200':
+          description: Student with given rollNumber found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudentDto'
+        '404':
+          description: Student with given roll number does not exist. Please enter correct rollNumber.
+        '500':
+          description: Internal server error
+
+    put:
+      summary: Modify an existing student record
+      operationId: updateStudent
+      parameters:
+        - name: rollNumber
+          in: path
+          required: true
+          description: Update student based on roll number.
+          schema:
+            type: integer
+            example: 1001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudentDto'
+      responses:
+        '200':
+          description: Student record updated successfully
+        '400':
+          description: Bad request (Please Enter Valid Data)
+        '404':
+          description: Student not found
+        '500':
+          description: Internal server error
+
+    delete:
+      summary: Delete a student record
+      operationId: deleteStudent
+      parameters:
+        - name: rollNumber
+          in: path
+          required: true
+          description: The roll number of the student to delete
+          schema:
+            type: integer
+            example: 1001
+      responses:
+        '204':
+          description: Student record deleted successfully (no content returned)
+        '404':
+          description: Student not found
+        '500':
+          description: Internal server error
+
+  /students/search:
+    get:
+      summary: Search for students by name
+      operationId: searchStudentsByName
+      parameters:
+        - name: name
+          in: query
+          required: true
+          description: The name of the student to search for
+          schema:
+            type: string
+            example: "Sourya"
+      responses:
+        '200':
+          description: List of students that match the given name
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StudentDto'
+        '400':
+          description: Bad request (e.g., missing or invalid parameters)
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    StudentDto:
+      type: object
+      properties:
+        rollNumber:
+          type: integer
+          description: Roll Number is auto-generated
+          example: 1001
+          readOnly: true
+        name:
+          type: string
+          description: Student Name
+          example: "Shobhit Kumar"
+        age:
+          type: string
+          description: Student Age
+          example: "15"
+        studentClass:
+          type: string
+          description: Student Class
+          example: "10th Grade"
+        phoneNumber:
+          type: string
+          description: Student PhoneNumber
+          example: "1234567890"
+      required:
+        - name
+        - age
+        - studentClass
+        - phoneNumber
