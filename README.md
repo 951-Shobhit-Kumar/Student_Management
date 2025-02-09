@@ -125,7 +125,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 This project includes unit and integration tests to ensure the reliability of the application. The tests cover various components like the controller and service layers, making sure everything works as expected.
 
-# Student Management System - Testing Strategy
+### Student Management System - Testing Strategy
 
 ## Overview
 Automated tests cover **Controller** and **Service** layers using **JUnit**, **Mockito**, and **MockMvc**.
@@ -145,10 +145,10 @@ Automated tests cover **Controller** and **Service** layers using **JUnit**, **M
 ## Running Tests
 ```bash
 ./gradlew test
-
+````
 ```bash
 gradlew test
-
+```
 # Swagger UI Integration
 
 ### View Swagger UI
@@ -159,6 +159,19 @@ http://localhost:8080/swagger-ui/
 Below is the screenshot of the Swagger UI for the Student Management System:
 
 ![Swagger UI](Assests/Swagger.png)
+
+## Postman Testing
+
+The following images provide an overview of the Postman testing conducted for the project:
+
+1. ![GET_ALL_STUDENT]![Get_All_Studnet.png](Assests%2FGet_All_Studnet.png)
+   - This image shows the setup and execution of the GET_ALL_STUDENT test case, which retrieves all student records when hitting the API.
+2. ![FIND_STUDENT_BY_NAME]![Get_Student_By_Name.png](Assests%2FGet_Student_By_Name.png)
+   - This image highlights the setup and execution of the FIND_STUDENT_BY_NAME test case, which retrieves a student record by name.
+3. ![INSERT_STUDENT](Assests/inserting_student.png)
+   - This image demonstrates the setup and execution of the INSERT_STUDENT test case, which inserts a new student record into the database.
+3. ![DELETE_STUDENT]![img.png](Assests%2Fimg.png)(Assests/inserting_student.png)
+   - This image demonstrates the setup and execution of the DELETE_STUDENT test case, which deletes a  student record from the database.
 
 
 
